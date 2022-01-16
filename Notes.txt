@@ -1,0 +1,59 @@
+This is the problem statement:
+
+fix_data.py
+
+1) Removes outliers
+2) Imputes missing values
+3) Adjusts for bias -> https://towardsdatascience.com/survey-d4f168791e57
+4) Logs metrics related to what changed from the original to the cleaned data
+5) Visualizes the logged metrics to display what changed from the original to the cleaned data
+
+=========================================================================================
+
+Data cleaning pipeline - https://towardsdatascience.com/cleaner-data-analysis-with-pandas-using-pipes-4d73770fbf3c
+https://towardsdatascience.com/practical-implementation-of-outlier-detection-in-python-90680453b3ce
+=========================================================================================
+Another developer is writing fix_data.py
+
+We want you
+
+1)  to look at multiple methods for imputing categorical, numeric, and time-series data
+
+To do the imputation we're not going to actually look at each missing value and take our best guess. Instead, we're going to automate the process using MICE. Not the little squeaky rodents, but Multiple Imputation by Chained Equations, specifically the version implemented in the mice R package. In the words of the package authors, Stef van Buuren and Karin Groothuis-Oudshoorn:
+
+
+https://towardsdatascience.com/8-clutch-ways-to-impute-missing-data-690481c6cb2b
+
+
+The word “impute” refers to deriving a statistical estimate of whatever data we are missing. There are different imputation techniques for different data types. For example, you could have Numeric data and the following imputation techniques would apply:
+
+    Impute using Mean/Median of the data
+    Impute using Arbitrary Value
+
+    Impute using the End of Tail method
+This method is similar to the arbitrary value method, however, the arbitrary value here is chosen at the tail-end of the underlying distribution of the variable.
+Assumptions: Data is not missing at random; Data is skewed at the tail-end
+
+If you have Categorical data, then you could do the following:
+
+    Impute data using Mode
+    Adding a category for Missing Data
+
+If you have Mixed data, containing both Numeric and Categorical values, then you could do the following:
+
+    Complete Case Analysis
+    Adding an indicator for missing values
+    Impute data using the Random Sample method
+
+
+
+2) to look at metrics and visualize how different two tabular data files are 
+
+https://towardsdatascience.com/speed-up-your-data-cleaning-and-preprocessing-with-klib-97191d320f80
+https://www.youtube.com/watch?v=HNmNB6YMgHk  -> Open clean library
+https://github.com/VIDA-NYU/openclean
+
+3) to work with Squark and Dan to adapt to code to the Squark tool
+
+the developer will add intriguing methods to fix_data.py
+
